@@ -1,0 +1,722 @@
+﻿<Page x:Class="WPFTest.Components.Pages.DashboardMain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFTest.Components.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Dashboard">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0"
+               Source="/Components/Pages/Topbar.xaml" />
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1">
+
+            <StackPanel Margin="15 12 20 0"
+                        Grid.Column="1">
+
+                <materialDesign:ColorZone Mode="Custom"
+                                          Background="MistyRose"
+                                          Foreground="LightSalmon"
+                                          CornerRadius="15"
+                                          Padding="40 20"
+                                          Margin="15">
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Welcome Back Admin!"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Margin="0 0 0 10"
+                                   FontFamily="Pristina Regular" />
+                        <TextBlock Text="Licensed To - "
+                                   FontSize="16"
+                                   Margin="0 0 0 10"
+                                   FontFamily="Trebuchet MS" />
+                        <TextBlock Text="OXPAN MICROSYS PVT. LTD."
+                                   FontSize="25"
+                                   Margin="110 0 0 10"
+                                   FontFamily="Trebuchet MS" />
+                        <TextBlock Text="Baneshwor, Kathmandu - 05"
+                                   FontSize="16"
+                                   Margin="110 0 0 10"
+                                   FontFamily="Trebuchet MS" />
+                        <TextBlock Text="2080/04/01  -  2081/03/31"
+                                   FontSize="16"
+                                   Margin="110 0 0 0"
+                                   FontFamily="Trebuchet MS" />
+                    </StackPanel>
+
+                </materialDesign:ColorZone>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Column="0"
+                          Grid.RowSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Column="0"
+                                    Grid.Row="0"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 5 0 -10">
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 10 0">
+
+                                <TextBlock Text="This Week" />
+
+                            </Button>
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 17 0">
+
+                                <TextBlock Text="Today" />
+
+                            </Button>
+
+                        </StackPanel>
+
+                        <materialDesign:ColorZone Grid.Column="0"
+                                                  Grid.Row="1"
+                                                  CornerRadius="15"
+                                                  Height="210"
+                                                  Mode="Custom"
+                                                  Background="CornflowerBlue"
+                                                  Foreground="White"
+                                                  Padding="20 10"
+                                                  Margin="15">
+
+                            <StackPanel>
+
+                                <WrapPanel Margin="0 0 0 0">
+
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            Height="40"
+                                            Width="40"
+                                            materialDesign:ButtonAssist.CornerRadius="6"
+                                            Foreground="White"
+                                            Margin="-15 -5 20 0"
+                                            DockPanel.Dock="Left">
+                                        <materialDesign:PackIcon Kind="FaceMan" />
+                                    </Button>
+                                    <TextBlock Text="TOTAL CUSTOMERS"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               FontSize="15"
+                                               FontWeight="Bold"
+                                               Margin="0 -3 0 0" />
+
+                                </WrapPanel>
+
+                                <DockPanel>
+                                    <TextBlock Text="24"
+                                               FontSize="70"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Margin="0 25 0 0" />
+                                </DockPanel>
+
+                            </StackPanel>
+
+                        </materialDesign:ColorZone>
+
+                        <StackPanel Grid.Row="0"
+                                    Grid.Column="1"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 5 0 -10">
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 10 0">
+
+                                <TextBlock Text="This Week" />
+
+                            </Button>
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 17 0">
+
+                                <TextBlock Text="Today" />
+
+                            </Button>
+
+                        </StackPanel>
+
+                        <materialDesign:ColorZone Grid.Column="1"
+                                                  Grid.Row="1"
+                                                  CornerRadius="15"
+                                                  Height="210"
+                                                  Mode="Custom"
+                                                  Background="CornflowerBlue"
+                                                  Foreground="White"
+                                                  Padding="20 10"
+                                                  Margin="15">
+
+                            <StackPanel>
+
+                                <WrapPanel Margin="0 0 0 0">
+
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            Height="40"
+                                            Width="40"
+                                            materialDesign:ButtonAssist.CornerRadius="6"
+                                            Foreground="White"
+                                            Margin="-15 -5 20 0"
+                                            DockPanel.Dock="Left">
+                                        <materialDesign:PackIcon Kind="Man" />
+                                    </Button>
+                                    <TextBlock Text="TOTAL SUPPLIERS"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               FontSize="15"
+                                               FontWeight="Bold"
+                                               Margin="0 -3 0 0" />
+
+                                </WrapPanel>
+
+                                <DockPanel>
+                                    <TextBlock Text="13"
+                                               FontSize="70"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Margin="0 25 0 0" />
+                                </DockPanel>
+
+                            </StackPanel>
+
+                        </materialDesign:ColorZone>
+
+                        <StackPanel Grid.Row="0"
+                                    Grid.Column="2"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 5 0 -10">
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 10 0">
+
+                                <TextBlock Text="This Week" />
+
+                            </Button>
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 17 0">
+
+                                <TextBlock Text="Today" />
+
+                            </Button>
+
+                        </StackPanel>
+
+                        <materialDesign:ColorZone Grid.Column="2"
+                                                  Grid.Row="2"
+                                                  CornerRadius="15"
+                                                  Height="210"
+                                                  Mode="Custom"
+                                                  Background="CornflowerBlue"
+                                                  Foreground="White"
+                                                  Padding="20 10"
+                                                  Margin="15">
+
+                            <StackPanel>
+
+                                <WrapPanel Margin="0 0 0 0">
+
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            Height="40"
+                                            Width="40"
+                                            materialDesign:ButtonAssist.CornerRadius="6"
+                                            Foreground="White"
+                                            Margin="-15 -5 20 0"
+                                            DockPanel.Dock="Left">
+                                        <materialDesign:PackIcon Kind="BucketOutline" />
+                                    </Button>
+                                    <TextBlock Text="TOTAL PRODUCTS"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               FontSize="15"
+                                               FontWeight="Bold"
+                                               Margin="0 -3 0 0" />
+
+                                </WrapPanel>
+
+                                <DockPanel>
+                                    <TextBlock Text="83"
+                                               FontSize="70"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Margin="0 25 0 0" />
+                                </DockPanel>
+
+                            </StackPanel>
+
+                        </materialDesign:ColorZone>
+
+                    </Grid>
+
+                    <Grid Grid.Column="1"
+                          Grid.RowSpan="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 5 5 -10">
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 10 0">
+
+                                <TextBlock Text="This Week" />
+
+                            </Button>
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 10 0">
+
+                                <TextBlock Text="Today" />
+
+                            </Button>
+
+                        </StackPanel>
+
+                        <materialDesign:ColorZone Grid.Row="1"
+                                                  CornerRadius="15"
+                                                  Height="420"
+                                                  Mode="Custom"
+                                                  Background="CornflowerBlue"
+                                                  Foreground="White"
+                                                  Padding="20 10"
+                                                  Margin="15">
+
+                            <StackPanel>
+
+                                <WrapPanel Margin="0 0 0 0">
+
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            Height="40"
+                                            Width="40"
+                                            materialDesign:ButtonAssist.CornerRadius="6"
+                                            Foreground="White"
+                                            Margin="-15 -5 20 0"
+                                            DockPanel.Dock="Left">
+                                        <materialDesign:PackIcon Kind="CartVariant" />
+                                    </Button>
+                                    <TextBlock Text="TOP SELLINGS"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               FontSize="15"
+                                               FontWeight="Bold"
+                                               Margin="0 -3 0 0" />
+
+                                </WrapPanel>
+
+                                <StackPanel>
+
+                                    <TextBlock Text="1. Current Noodles  Rs. 50"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="2. Wai Wai Noodles  Rs. 25"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="3. Oreo Biscuits  Rs. 25"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="4. Chocofun Chocolate  Rs. 5"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="5. Chocopie  Rs. 25"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="6. Dairy Milk  Rs. 180"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="7. Kitkat  Rs. 70"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="8. Egg  Rs. 15"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="9. Basmati Rice  Rs. 2550"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+                                    <TextBlock Text="10. Current Kurkure  Rs. 50"
+                                               FontFamily="Times New Roman"
+                                               FontSize="18"
+                                               Margin="0 5 0 10" />
+
+                                </StackPanel>
+
+                            </StackPanel>
+
+                        </materialDesign:ColorZone>
+
+                    </Grid>
+
+                    <Grid Grid.Column="0"
+                          Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0"
+                                    Grid.Column="0"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 5 0 -10">
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 10 0">
+
+                                <TextBlock Text="This Week" />
+
+                            </Button>
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 17 0">
+
+                                <TextBlock Text="Today" />
+
+                            </Button>
+
+                        </StackPanel>
+
+                        <materialDesign:ColorZone Grid.Column="0"
+                                                  Grid.Row="1"
+                                                  CornerRadius="15"
+                                                  Height="250"
+                                                  Mode="Custom"
+                                                  Background="CornflowerBlue"
+                                                  Foreground="White"
+                                                  Padding="20 10"
+                                                  Margin="15">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0">
+
+                                    <WrapPanel Margin="0 0 0 0">
+
+                                        <Button Style="{StaticResource MaterialDesignIconButton}"
+                                                Height="40"
+                                                Width="40"
+                                                materialDesign:ButtonAssist.CornerRadius="6"
+                                                Foreground="White"
+                                                Margin="0 -5 20 0"
+                                                DockPanel.Dock="Left">
+                                            <materialDesign:PackIcon Kind="Cart" />
+                                        </Button>
+                                        <TextBlock Text="SALES"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="15"
+                                                   FontWeight="Bold"
+                                                   Margin="0 -3 0 0" />
+
+                                    </WrapPanel>
+
+                                </StackPanel>
+
+                                <Grid Grid.Row="1" Margin="0 10 0 0">
+
+                                    <lvc:CartesianChart Margin="0">
+                                        <lvc:CartesianChart.ToolTip>
+                                            <lvc:DefaultTooltip Background="White"
+                                                                Foreground="Black"
+                                                                BulletSize="0" />
+                                        </lvc:CartesianChart.ToolTip>
+
+                                        <lvc:CartesianChart.AxisX>
+                                            <lvc:Axis Foreground="White"
+                                                      FontSize="14"
+                                                      ShowLabels="True"
+                                                      Labels="SUN,MON,TUE,WED,THUS,FRI,SAT">
+                                                <lvc:Axis.Separator>
+                                                    <lvc:Separator StrokeThickness="1" />
+                                                </lvc:Axis.Separator>
+                                            </lvc:Axis>
+                                        </lvc:CartesianChart.AxisX>
+
+                                        <lvc:CartesianChart.AxisY>
+                                            <lvc:Axis ShowLabels="True"
+                                                      Foreground="White"
+                                                      FontSize="14"
+                                                      MinValue="30"
+                                                      MaxValue="110">
+                                                <lvc:Axis.Separator>
+                                                    <lvc:Separator StrokeThickness="1" />
+                                                </lvc:Axis.Separator>
+                                            </lvc:Axis>
+                                        </lvc:CartesianChart.AxisY>
+
+                                        <lvc:CartesianChart.Series>
+                                            <lvc:LineSeries Fill="Transparent"
+                                                            StrokeThickness="4"
+                                                            PointGeometrySize="0"
+                                                            Values="50,65,55,65,68,58">
+                                                <lvc:LineSeries.Stroke>
+                                                    <LinearGradientBrush>
+                                                        <GradientStop Color="White"
+                                                                      Offset="0" />
+                                                    </LinearGradientBrush>
+                                                </lvc:LineSeries.Stroke>
+                                            </lvc:LineSeries>
+                                        </lvc:CartesianChart.Series>
+
+                                    </lvc:CartesianChart>
+
+                                </Grid>
+
+                            </Grid>
+
+                        </materialDesign:ColorZone>
+
+                        <StackPanel Grid.Row="0"
+                                    Grid.Column="1"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 5 0 -10">
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 10 0">
+
+                                <TextBlock Text="This Week" />
+
+                            </Button>
+
+                            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+                                    Background="MistyRose"
+                                    materialDesign:ButtonAssist.CornerRadius="15"
+                                    Width="auto"
+                                    Height="35"
+                                    materialDesign:RippleAssist.Feedback="LightSalmon"
+                                    Margin="0 0 17 0">
+
+                                <TextBlock Text="Today" />
+
+                            </Button>
+
+                        </StackPanel>
+
+                        <materialDesign:ColorZone Grid.Column="1"
+                                                  Grid.Row="1"
+                                                  CornerRadius="15"
+                                                  Height="250"
+                                                  Mode="Custom"
+                                                  Background="CornflowerBlue"
+                                                  Foreground="White"
+                                                  Padding="20 10"
+                                                  Margin="15">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0">
+
+                                    <WrapPanel Margin="0 0 0 0">
+
+                                        <Button Style="{StaticResource MaterialDesignIconButton}"
+                                                Height="40"
+                                                Width="40"
+                                                materialDesign:ButtonAssist.CornerRadius="6"
+                                                Foreground="White"
+                                                Margin="0 -5 20 0"
+                                                DockPanel.Dock="Left">
+                                            <materialDesign:PackIcon Kind="Sack" />
+                                        </Button>
+                                        <TextBlock Text="PURCHASE"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="15"
+                                                   FontWeight="Bold"
+                                                   Margin="0 -3 0 0" />
+
+                                    </WrapPanel>
+
+                                </StackPanel>
+
+                                <Grid Grid.Row="1" Margin="0 10 0 0">
+
+                                    <lvc:CartesianChart Margin="0">
+                                        <lvc:CartesianChart.ToolTip>
+                                            <lvc:DefaultTooltip Background="White"
+                                                                Foreground="Black"
+                                                                BulletSize="0" />
+                                        </lvc:CartesianChart.ToolTip>
+
+                                        <lvc:CartesianChart.AxisX>
+                                            <lvc:Axis Foreground="White"
+                                                      FontSize="14"
+                                                      ShowLabels="True"
+                                                      Labels="SUN,MON,TUE,WED,THUS,FRI,SAT">
+                                                <lvc:Axis.Separator>
+                                                    <lvc:Separator StrokeThickness="1" />
+                                                </lvc:Axis.Separator>
+                                            </lvc:Axis>
+                                        </lvc:CartesianChart.AxisX>
+
+                                        <lvc:CartesianChart.AxisY>
+                                            <lvc:Axis ShowLabels="True"
+                                                      Foreground="White"
+                                                      FontSize="14"
+                                                      MinValue="30"
+                                                      MaxValue="110">
+                                                <lvc:Axis.Separator>
+                                                    <lvc:Separator StrokeThickness="1" />
+                                                </lvc:Axis.Separator>
+                                            </lvc:Axis>
+                                        </lvc:CartesianChart.AxisY>
+
+                                        <lvc:CartesianChart.Series>
+                                            <lvc:LineSeries Fill="Transparent"
+                                                            StrokeThickness="4"
+                                                            PointGeometrySize="0"
+                                                            Values="98,90,70,50,65,41">
+                                                <lvc:LineSeries.Stroke>
+                                                    <LinearGradientBrush>
+                                                        <GradientStop Color="White"
+                                                                      Offset="0" />
+                                                    </LinearGradientBrush>
+                                                </lvc:LineSeries.Stroke>
+                                            </lvc:LineSeries>
+                                        </lvc:CartesianChart.Series>
+
+                                    </lvc:CartesianChart>
+
+                                </Grid>
+
+                            </Grid>
+
+                        </materialDesign:ColorZone>
+
+                    </Grid>
+
+                </Grid>
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Grid>
+</Page>
