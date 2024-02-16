@@ -1,0 +1,25 @@
+﻿<Window x:Class="OxpanPosDesktopUI.Views.Homepage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OxpanPosDesktopUI.Views"
+        mc:Ignorable="d"
+        Title="Homepage" Height="450" Width="800"
+        WindowState="Maximized">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--sidebar menu-->
+        <Frame Grid.Column="0"
+               Source="SidebarMenu.xaml" />
+
+        <!--content field-->
+        <Frame Grid.Column="1" Source="DashboardMain.xaml" />
+
+    </Grid>
+</Window>
