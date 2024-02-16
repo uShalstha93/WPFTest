@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Components\Assets\" />
+    <Folder Include="Components\Views\" />
     <Folder Include="Components\UserControl\" />
   </ItemGroup>
 
